@@ -10,3 +10,4 @@ require('dotenv').config();
 router.post("/upload/:id", multer({ dest:`blogs`, limits: { fieldSize: 8 * 1024 * 1024 } }).single(
     'avatar'
     ), uploader)
+module.exports = router
