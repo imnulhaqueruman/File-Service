@@ -16,4 +16,8 @@ exports.Uploader= async(res,req,next) =>{
         forcePathStyle:true
        
     })
+    const uid = req.params.id
+    const s3 = new aws.S3();
+    const date = new Date();
+    const rowImage = `${req.file.originalname}`;
 }
