@@ -23,3 +23,14 @@ const uri = `${process.env.URI}`;
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => console.log('DB CONNECTED'))
     .catch(err => console.log(`DB CONNECTION ERR${err}`))
+
+// middleWares 
+app.use(morgan('dev'));
+app.use(bodyParser.json());
+app.use(cors());
+app.use(Errorhandler);
+
+
+app.listen(port, '0.0.0.0', () =>{
+    console.log(`Example app listening at http://localhost:${port}`)
+})
